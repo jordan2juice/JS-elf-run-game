@@ -2,20 +2,19 @@
 // Don't ask why!
 $ = document.querySelector.bind(document);
 
-
 // This will keep track of the position of the elf.
 let elfLocation = {
-  top: 1, 
-  left: 2
+  top: 1,
+  left: 2,
 };
 
 // *****************************************
 // This positions the elf on the board.
 // *****************************************
-function placeElf(leftPosition, topPosition){
+function placeElf(leftPosition, topPosition) {
   box = document.querySelector("#main-box");
-  box.style.top= (topPosition*100) + "px";
-  box.style.left = (leftPosition*100) + "px";
+  box.style.top = topPosition * 100 + "px";
+  box.style.left = leftPosition * 100 + "px";
 }
 
 // *****************************************
@@ -46,7 +45,9 @@ function walkUp() {
 function walkDown() {
   console.log("walk down");
   // TODO: make the elf turn and walk down
-
+  elfLocation.down++;
+  turnElf("down");
+  placeElf(elfLocation.left, elfLocation.top);
 }
 
 // *****************************************
@@ -63,17 +64,15 @@ rightButton.onclick = walkRight;
 // *****************************************
 // TODO: set up the button for walking up
 // *****************************************
-
+console.log(rightButton);
 // *****************************************
 // TODO:  set up the button for walking down
 // *****************************************
+upButton = $("#up-button");
+upButton.onclick = walkUp;
+console.log(upButton);
 
-
-
-
-
-
-
+downButton = $("#down-button");
 
 // *****************************************
 // This function will set the sprite
@@ -84,21 +83,24 @@ function turnElf(direction) {
   let elfSprite = $("#elf-sprite");
 
   // set the correct image for walking left.
-  if(direction === 'left') {
+  if (direction === "left") {
     elfSprite.src = "img/elf_left.png";
   }
 
+  if (direction === "right") {
+    elfSprite.src = "img/elf_right.png";
+  }
+
+  if (direction === "up") {
+    elfSprite.src = "img/elf_up.png";
+  }
+
+  if (direction === "down") {
+    elfSprite.src = "img/elf_down.png";
+  }
   // TODO: if the direction is right, up, or down
   // set the src to be the correct image
-
-
-
-
-
-
-
 }
-
 
 // *****************************************
 // Now we must call place elf to put in into
@@ -108,7 +110,6 @@ function turnElf(direction) {
 placeElf(elfLocation.left, elfLocation.top);
 // It starts looking down, so set it here.
 turnElf("down");
-
 
 // *****************************************
 // Cookie Placement
@@ -120,57 +121,45 @@ turnElf("down");
 let cookie1 = {
   id: "#cookie-1",
   left: 2,
-  top: 4
-}
+  top: 4,
+};
 
 let cookie2 = {
   id: "#cookie-2",
   left: 1,
-  top: 2
-}
+  top: 2,
+};
 
 // TODO: make cookies for 3, 4, and 5.
 // Hint: look in index.html for the ids.
 
-
-
 let cookieObjects = [
   cookie1,
-  cookie2
+  cookie2,
   // TODO: put more cookies here.
-
 ];
 
-let cookieElm; 
+let cookieElm;
 
 // *****************************************
 // This code places the cookies on the screen
 // *****************************************
 console.log(cookie1);
 cookieElm = document.querySelector(cookie1.id); // select "cookie-1"
-cookieElm.style.left = (100*cookie1.left) + 'px';
-cookieElm.style.top = (100*cookie1.top) + 'px';
+cookieElm.style.left = 100 * cookie1.left + "px";
+cookieElm.style.top = 100 * cookie1.top + "px";
 
 console.log(cookie2);
 cookieElm = document.querySelector(cookie2.id); // select "cookie-2"
-cookieElm.style.left = (100*cookie2.left) + 'px';
-cookieElm.style.top = (100*cookie2.top) + 'px';
+cookieElm.style.left = 100 * cookie2.left + "px";
+cookieElm.style.top = 100 * cookie2.top + "px";
 
 // *****************************************
 // TODO: set the positions of the other cookies (3, 4, and 5)
 // *****************************************
 
-
-
-
-
-// BONUS: Replace the code for placing the cookies 
+// BONUS: Replace the code for placing the cookies
 // on the page with a for-loop
-
-
-
-
-
 
 // More Bonuses, check if the elf walks into a cookie
 // If so, set the style.display of the cookie to none.
