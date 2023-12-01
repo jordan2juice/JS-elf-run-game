@@ -18,7 +18,7 @@ html {
   height: 500px;
   margin: auto;
   border: solid;
-  background-color: peachpuff;
+  background-image: url("img/forest-bkgd.webp");
 }
 
 #main-box {
@@ -49,6 +49,6 @@ html {
   position: absolute;
   width: 40px;
   height: 40px;
-  top: 30px;  /* put in the center of the cookie-box*/
+  top: 30px; /* put in the center of the cookie-box*/
   left: 30px; /* put in the center of the cookie-box*/
 }

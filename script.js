@@ -122,13 +122,13 @@ turnElf("down");
 // It will also indicate where to place the cookie on the board.
 let cookie1 = {
   id: "#cookie-1",
-  left: 2,
+  left: 1,
   top: 4,
 };
 
 let cookie2 = {
   id: "#cookie-2",
-  left: 1,
+  left: 3,
   top: 2,
 };
 
