@@ -45,7 +45,7 @@ function walkUp() {
 function walkDown() {
   console.log("walk down");
   // TODO: make the elf turn and walk down
-  elfLocation.down++;
+  elfLocation.top++;
   turnElf("down");
   placeElf(elfLocation.left, elfLocation.top);
 }
@@ -73,6 +73,8 @@ upButton.onclick = walkUp;
 console.log(upButton);
 
 downButton = $("#down-button");
+downButton.onclick = walkDown;
+console.log(downButton);
 
 // *****************************************
 // This function will set the sprite
