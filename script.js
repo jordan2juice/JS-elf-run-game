@@ -132,6 +132,18 @@ let cookie2 = {
   top: 2,
 };
 
+let cookie3 = {
+  id: "#cookie-3",
+  left: 3,
+  top: 4,
+};
+
+let cookie4 = {
+  id: "#cookie-4",
+  left: 4,
+  top: 2,
+};
+
 // TODO: make cookies for 3, 4, and 5.
 // Hint: look in index.html for the ids.
 
@@ -139,6 +151,8 @@ let cookieObjects = [
   cookie1,
   cookie2,
   // TODO: put more cookies here.
+  cookie3,
+  cookie4,
 ];
 
 let cookieElm;
@@ -156,6 +170,15 @@ cookieElm = document.querySelector(cookie2.id); // select "cookie-2"
 cookieElm.style.left = 100 * cookie2.left + "px";
 cookieElm.style.top = 100 * cookie2.top + "px";
 
+console.log(cookie3);
+cookieElm = document.querySelector(cookie3.id);
+cookieElm.style.left = 100 * cookie3.left + "px";
+cookieElm.style.top = 100 * cookie3.top + "px";
+
+onsole.log(cookie4);
+cookieElm = document.querySelector(cookie4.id);
+cookieElm.style.left = 100 * cookie4.left + "px";
+cookieElm.style.top = 100 * cookie4.top + "px";
 // *****************************************
 // TODO: set the positions of the other cookies (3, 4, and 5)
 // *****************************************
